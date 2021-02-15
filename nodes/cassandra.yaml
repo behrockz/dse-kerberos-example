@@ -1,0 +1,153 @@
+permissions_cache_max_entries: 1000
+ssl_storage_port: 7001
+storage_port: 7000
+continuous_paging:
+  max_concurrent_sessions: 60
+  max_session_pages: 4
+  max_page_size_mb: 8
+  max_local_query_time_ms: 5000
+  client_timeout_sec: 600
+  cancel_timeout_sec: 5
+  paused_check_interval_ms: 1
+batchlog_replay_throttle_in_kb: 1024
+commit_failure_policy: stop
+unlogged_batch_across_partitions_warn_threshold: 10
+native_transport_max_frame_size_in_mb: 256
+commitlog_segment_size_in_mb: 32
+memtable_flush_writers: 4
+allocate_tokens_for_local_replication_factor: 3
+client_encryption_options:
+  truststore: /etc/dse/keystores/client.truststore
+  protocol: TLS
+  optional: true
+  require_client_auth: false
+  enabled: true
+  truststore_password: salam1
+  algorithm: SunX509
+  keystore: /etc/dse/keystores/client.keystore
+  truststore_type: JKS
+  keystore_type: JKS
+  keystore_password: salam1
+inter_dc_tcp_nodelay: false
+column_index_cache_size_in_kb: 2
+internode_authenticator: org.apache.cassandra.auth.AllowAllInternodeAuthenticator
+max_value_size_in_mb: 256
+authorizer: com.datastax.bdp.cassandra.auth.DseAuthorizer
+num_tokens: 8
+listen_on_broadcast_address: true
+row_cache_save_period: 0
+row_cache_class_name: org.apache.cassandra.cache.OHCProvider
+disk_failure_policy: stop
+native_transport_port: 9042
+enable_user_defined_functions_threads: true
+server_encryption_options:
+  truststore: /etc/dse/keystores/server.truststore
+  protocol: TLS
+  require_client_auth: false
+  truststore_password: salam1
+  internode_encryption: all
+  algorithm: SunX509
+  keystore: /etc/dse/keystores/server.keystore
+  truststore_type: JKS
+  keystore_type: JKS
+  require_endpoint_verification: false
+  keystore_password: salam1
+dynamic_snitch_reset_interval_in_ms: 600000
+compaction_throughput_mb_per_sec: 16
+data_file_directories:
+- /var/lib/cassandra/data
+role_manager: com.datastax.bdp.cassandra.auth.DseRoleManager
+column_index_size_in_kb: 16
+batch_size_warn_threshold_in_kb: 64
+windows_timer_interval: 1
+compaction_large_partition_warning_threshold_mb: 100
+rpc_keepalive: true
+commitlog_total_space_in_mb: 8192
+nodesync:
+  rate_in_kb: 1024
+batch_size_fail_threshold_in_kb: 640
+snapshot_before_compaction: false
+tracetype_query_ttl: 86400
+pick_level_on_streaming: false
+system_keyspaces_filtering: false
+row_cache_size_in_mb: 0
+tracetype_repair_ttl: 604800
+native_transport_address: 192.168.178.31
+tombstone_warn_threshold: 1000
+auto_bootstrap: true
+tpc_cores: 4
+commitlog_sync: periodic
+concurrent_validations: 0
+disk_optimization_strategy: ssd
+counter_cache_save_period: 7200
+user_defined_function_warn_micros: 500
+back_pressure_enabled: false
+user_defined_function_fail_micros: 10000
+slow_query_log_timeout_in_ms: 500
+trickle_fsync: true
+streaming_keep_alive_period_in_secs: 300
+io_global_queue_depth: 128
+write_request_timeout_in_ms: 2000
+incremental_backups: false
+truncate_request_timeout_in_ms: 60000
+enable_scripted_user_defined_functions: false
+read_request_timeout_in_ms: 5000
+request_timeout_in_ms: 10000
+start_native_transport: true
+concurrent_materialized_view_builders: 2
+memtable_allocation_type: offheap_objects
+saved_caches_directory: /var/lib/cassandra/saved_caches
+transparent_data_encryption_options:
+  enabled: false
+  chunk_length_kb: 64
+  cipher: AES/CBC/PKCS5Padding
+  key_alias: testing:1
+internode_compression: dc
+authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
+phi_convict_threshold: 8
+max_hints_delivery_threads: 2
+cross_node_timeout: false
+partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+tombstone_failure_threshold: 100000
+hinted_handoff_enabled: true
+hints_flush_period_in_ms: 10000
+enable_user_defined_functions: false
+hinted_handoff_throttle_in_kb: 1024
+max_hint_window_in_ms: 10800000
+otc_coalescing_strategy: DISABLED
+user_defined_function_warn_heap_mb: 200
+auto_snapshot: true
+cdc_raw_directory: /var/lib/cassandra/cdc_raw
+range_request_timeout_in_ms: 10000
+user_function_timeout_policy: die
+stream_throughput_outbound_megabits_per_sec: 200
+commitlog_directory: /var/lib/cassandra/commitlog
+sstable_preemptive_open_interval_in_mb: 50
+seed_provider:
+- class_name: org.apache.cassandra.locator.SimpleSeedProvider
+  parameters:
+  - seeds: 192.168.178.29, 192.168.178.30
+dynamic_snitch_update_interval_in_ms: 100
+trickle_fsync_interval_in_kb: 10240
+listen_address: 192.168.178.31
+commitlog_sync_period_in_ms: 10000
+cdc_enabled: false
+max_hints_file_size_in_mb: 128
+counter_write_request_timeout_in_ms: 5000
+cluster_name: Home
+echo_attempts_before_reset: 10
+endpoint_snitch: GossipingPropertyFileSnitch
+cross_dc_rtt_in_ms: 0
+streaming_connections_per_host: 1
+hints_directory: /var/lib/cassandra/hints
+dynamic_snitch_badness_threshold: 0.1
+native_transport_broadcast_address: 192.168.178.31
+native_transport_max_concurrent_connections_per_ip: -1
+broadcast_address: 192.168.178.31
+user_defined_function_fail_heap_mb: 500
+permissions_validity_in_ms: 120000
+roles_validity_in_ms: 120000
+cas_contention_timeout_in_ms: 1000
+seed_gossip_probability: 1.0
+native_transport_max_concurrent_connections: -1
+aggregated_request_timeout_in_ms: 120000
